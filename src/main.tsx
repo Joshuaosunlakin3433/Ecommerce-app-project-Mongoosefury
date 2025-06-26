@@ -7,7 +7,8 @@ import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import SignUp from "./pages/SignUp.tsx";
 
-// The index route is the default child route that will be rendered when the parent path is matched
+// Create a router with nested routes
+// The root route renders the App component, which includes a Navbar and an outlet for nested routes
 const router = createBrowserRouter([
   {
     path: "/", 
