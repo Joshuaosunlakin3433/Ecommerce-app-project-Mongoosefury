@@ -10,8 +10,8 @@ import SignUp from "./pages/SignUp.tsx";
 // The index route is the default child route that will be rendered when the parent path is matched
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: "/", 
+    element: <App />, 
     children: [
       { index: true, element: <Home /> },
       { path: "contact", element: <Contact /> },
