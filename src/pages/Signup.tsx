@@ -76,7 +76,7 @@ const SignUp = () => {
             <p className="text-gray-600 text-center mt-6 text-sm gap-2">
               Already have an account?{" "}
               <a href="/login" className="text-black underline">
-                Log in
+                Log in 
               </a>
             </p>
           </form>
