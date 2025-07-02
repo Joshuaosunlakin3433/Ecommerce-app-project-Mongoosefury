@@ -22,13 +22,18 @@ Design System Notes:
 1. White Colors:
     - Primary White: Used only for the main background (use Tailwind's bg-white).
     - Secondary Whites:
-      - --color-secondaryWhite: For text backgrounds.
+      - --color-secondaryWhite: For text colors.
       - --color-productWhite: For product card backgrounds.
       - (If you find another secondary white in the design, add it as needed.)
 
 2. Red Colors:
     - --color-secondaryRed: Primary red, used for button backgrounds.
     - --color-hoverRed: Secondary red, used for hover states.
+
+3. Black Colors: Black is black as the normal tailwind styling, the only shades of black are 
+- gray- as stated in the custom styling
+- primaryBlack- which I haven't seen where it's been used yet but you can figure it out when you see it because it's not the regular black color
+- overall, just normal black is used in almost everything.
 
 3. Fonts:
     - --font-heading: "Inter", used for headings.
