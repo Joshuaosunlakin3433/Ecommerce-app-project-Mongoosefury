@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
-import SignUp from "./pages/SignUp.tsx";
+import SignUp from "./pages/Signup.tsx";
 
 // The index route is the default child route that will be rendered when the parent path is matched
 const router = createBrowserRouter([
