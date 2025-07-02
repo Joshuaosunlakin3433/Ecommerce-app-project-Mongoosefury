@@ -6,6 +6,7 @@ import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import SignUp from "./pages/SignUp.tsx";
+import Login from "./pages/Login.tsx";
 
 // The index route is the default child route that will be rendered when the parent path is matched
 const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "about", element: <About /> },
       { path: "sign-up", element: <SignUp /> },
+      {path: "login", element: <Login/>}
     ],
   },
 ]);
