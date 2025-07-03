@@ -1,18 +1,17 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
+import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import Contact from "./pages/Contact.tsx";
-import About from "./pages/About.tsx";
-import SignUp from "./pages/SignUp.tsx";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import SignUp from "./pages/Signup";
 
-// Create a router with nested routes
-// The root route renders the App component, which includes a Navbar and an outlet for nested routes
 const router = createBrowserRouter([
   {
-    path: "/", 
-    element: <App />, 
+    path: "/",
+    element: <App />,
     children: [
       { index: true, element: <Home /> },
       { path: "contact", element: <Contact /> },
@@ -23,5 +22,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
