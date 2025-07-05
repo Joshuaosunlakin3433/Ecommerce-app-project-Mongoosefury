@@ -5,7 +5,7 @@ import { CartProvider } from "./context/CartContext";
 import { CartDrawerProvider } from "./context/cartDrawerContext";
 import { Toaster } from "react-hot-toast";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <CartProvider>
       <CartDrawerProvider>
