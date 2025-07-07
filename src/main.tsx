@@ -7,11 +7,10 @@ import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 
-import SignUp from "./pages/Signup.tsx";
-import Login from "./pages/Login.tsx";
-import NotFound from "./pages/NotFound.tsx";
 
-import NewArrival from "./components/NewArrival.tsx";
+import Login from "./pages/Login.tsx";
+import Error404 from "./pages/Error404.tsx";
+import SignUp from "./pages/SignUp.tsx";
 
 
 
@@ -25,8 +24,7 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "Signup", element: <SignUp/>},
       {path: "login", element: <Login/>},
-      {path: "NewArrival", element: <NewArrival />},
-      {path: "*", element: <NotFound/>}
+      {path: "*", element: <Error404/>}
     ],
   },
 ]);
