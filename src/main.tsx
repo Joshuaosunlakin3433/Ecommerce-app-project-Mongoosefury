@@ -12,7 +12,7 @@ import Login from "./pages/Login.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 import NewArrival from "./components/NewArrival.tsx";
-import SignUp from "./pages/Signup.tsx";
+
 
 
 const router = createBrowserRouter([
