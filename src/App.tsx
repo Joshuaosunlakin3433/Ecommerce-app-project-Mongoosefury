@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css';
 import Footer from './Components/Footer';
-import NavBar from './Components/Navbar';
+import NavBar from './components/NavBar';
 import { Outlet } from "react-router-dom";
 import CartDrawer from "./Components/CartDrawer";
 import { CartProvider } from "./context/CartContext";
 import { CartDrawerProvider } from "./context/cartDrawerContext";
 import { Toaster } from "react-hot-toast";
+import Home from "./pages/Home"
 
 const App: React.FC = () => {
   return (

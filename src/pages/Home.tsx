@@ -3,6 +3,8 @@ import { useCart } from "../context/CartContext";
 import { useCartDrawer } from "../context/cartDrawerContext";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import CategorySection from "../Sections/CategorySection"
+import Products from "../Sections/Products"
 
 import {
   FaChevronRight,
@@ -373,8 +375,11 @@ const Home = () => {
           <div className="border-b border-gray-400 mt-4" />
         </section>
       </div>
+       <CategorySection/>
+      <Products/>
     </div>
   );
 };
 
-export default Home;
+
+export default Home
