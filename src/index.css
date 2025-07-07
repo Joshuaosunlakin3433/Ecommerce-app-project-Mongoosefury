@@ -1,9 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-:root {
-  --font-poppins: "Poppins", sans-serif;
-  --font-inter: "Inter" , sans-serif;
+@theme {
+  --font-heading: "Inter", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+  --color-secondaryWhite: #f5f5f5;
+  --color-textWhite: #fafafa;
+  --color-primaryBlack: #363738;
+  --color-textGray: #7d8184;
+  --color-secondaryRed: #db4444;
+  --color-textWhite: #d37643;
+  --color-hoverRed: #e07575;
+  --color-hoverBlue: #a0bce0;
+  --color-greenButton: #00ff66;
 }
+
+/* 
+Design System Notes:
+
+1. White Colors:
+    - Primary White: Used only for the main background (use Tailwind's bg-white).
+    - Secondary Whites:
+      - --color-secondaryWhite: For text colors.
+      - --color-productWhite: For product card backgrounds.
+      - (If you find another secondary white in the design, add it as needed.)
+
+2. Red Colors:
+    - --color-secondaryRed: Primary red, used for button backgrounds.
+    - --color-hoverRed: Secondary red, used for hover states.
+
+3. Black Colors: Black is black as the normal tailwind styling, the only shades of black are 
+- gray- as stated in the custom styling
+- primaryBlack- which I haven't seen where it's been used yet but you can figure it out when you see it because it's not the regular black color
+- overall, just normal black is used in almost everything.
+
+3. Fonts:
+    - --font-heading: "Inter", used for headings.
+    - --font-secondary: "Poppins", used for body text.
+
+Note: Variable names reflect their intended use in the design for clarity.
+*/

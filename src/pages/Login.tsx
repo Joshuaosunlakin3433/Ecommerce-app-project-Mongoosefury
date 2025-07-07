@@ -1,4 +1,22 @@
+import { useState } from "react";
+
 const Login = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  // Function to handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+  // Function to handle form submission
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Here you would typically handle the login logic, such as calling an API
+    console.log("Form submitted:", formData);
+  };
+
   return (
     <div className="flex flex-row h-screen gap-10">
       <img
@@ -14,27 +32,25 @@ const Login = () => {
           </h1>
           <p className="text-black mb-6 ">Enter your details below</p>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="emailOrPhone" className="sr-only">
-                Email or Phone Number
-              </label>
               <input
                 type="text"
-                id="emailOrPhone"
-                placeholder="Email or Phone Number"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border-b border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
               <input
                 type="password"
-                id="password"
+                name="password"
                 placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border-b border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
