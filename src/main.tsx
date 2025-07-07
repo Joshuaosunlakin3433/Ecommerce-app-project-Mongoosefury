@@ -1,11 +1,13 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
+import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 
+import SignUp from "./pages/Signup.tsx";
 import Login from "./pages/Login.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -13,7 +15,6 @@ import NewArrival from "./components/NewArrival.tsx";
 import SignUp from "./pages/Signup.tsx";
 
 
-// The index route is the default child route that will be rendered when the parent path is matched
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,5 +32,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
