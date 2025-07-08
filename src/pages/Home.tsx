@@ -3,8 +3,8 @@ import { useCart } from "../context/CartContext";
 import { useCartDrawer } from "../context/cartDrawerContext";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
-import CategorySection from "../Sections/CategorySection"
-import Products from "../Sections/Products"
+import CategorySection from "../Sections/CategorySection";
+import Products from "../Sections/Products";
 
 import {
   FaChevronRight,
@@ -131,22 +131,22 @@ const Home = () => {
 
   // Persist cart to localStorage
   useEffect(() => {
-  const saved = localStorage.getItem("cart");
-  if (saved) {
-    try {
-      const parsed = JSON.parse(saved);
-      if (Array.isArray(parsed)) {
-        parsed.forEach((item) => {
-          if (item) addToCart(item);
-        });
-      } else {
-        console.warn("Cart in localStorage is not an array:", parsed);
+    const saved = localStorage.getItem("cart");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          parsed.forEach((item) => {
+            if (item) addToCart(item);
+          });
+        } else {
+          console.warn("Cart in localStorage is not an array:", parsed);
+        }
+      } catch (err) {
+        console.error("Invalid cart in localStorage", err);
       }
-    } catch (err) {
-      console.error("Invalid cart in localStorage", err);
     }
-  }
-}, []);
+  }, []);
 
   return (
     <div className="bg-white w-screen ">
@@ -265,12 +265,16 @@ const Home = () => {
               <button
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
                 onClick={() => scroll("left")}
+                aria-label="Scroll left"
+                title="Scroll left"
               >
                 <FaArrowLeft size={16} className="text-gray-600" />
               </button>
               <button
                 className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
                 onClick={() => scroll("right")}
+                aria-label="Scroll right"
+                title="Scroll right"
               >
                 <FaArrowRight size={16} className="text-gray-600" />
               </button>
@@ -279,9 +283,8 @@ const Home = () => {
 
           {/* Products grid */}
           <div
-            className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide"
+            className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide smooth-scroll"
             ref={scrollRef}
-            style={{ scrollBehavior: "smooth" }}
           >
             {products.map((p, i) => (
               <motion.div
@@ -298,11 +301,19 @@ const Home = () => {
 
                 {/* Heart and eye icons */}
                 <div className="absolute top-3 right-2 flex flex-col gap-2 z-10">
-                  <button className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors">
+                  <button
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors"
+                    title="Add to wishlist"
+                    aria-label="Add to wishlist"
+                  >
                     <FaRegHeart className="text-black hover:text-red-500 text-sm cursor-pointer" />
                   </button>
-                  <button className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors">
-                    <FaRegEye  className="text-black hover:text-blue-500 text-sm cursor-pointer" />
+                  <button
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors"
+                    title="View product"
+                    aria-label="View product"
+                  >
+                    <FaRegEye className="text-black hover:text-blue-500 text-sm cursor-pointer" />
                   </button>
                 </div>
 
@@ -375,11 +386,10 @@ const Home = () => {
           <div className="border-b border-gray-400 mt-4" />
         </section>
       </div>
-       <CategorySection/>
-      <Products/>
+      <CategorySection />
+      <Products />
     </div>
   );
 };
 
-
-export default Home
+export default Home;

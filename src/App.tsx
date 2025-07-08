@@ -1,13 +1,13 @@
-import React from 'react';
-import './index.css';
-import Footer from './Components/Footer';
-import NavBar from './components/NavBar';
+import React from "react";
+import "./index.css";
+import Footer from "./Components/Footer";
+import NavBar from "./Components/NavBar";
 import { Outlet } from "react-router-dom";
 import CartDrawer from "./Components/CartDrawer";
 import { CartProvider } from "./context/CartContext";
 import { CartDrawerProvider } from "./context/cartDrawerContext";
 import { Toaster } from "react-hot-toast";
-import Home from "./pages/Home"
+// This is the main App component that wraps the application with context providers
 
 const App: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const App: React.FC = () => {
             <Outlet />
             <CartDrawer />
           </main>
-           <Footer />
+          <Footer />
           <Toaster position="top-right" />
         </div>
       </CartDrawerProvider>

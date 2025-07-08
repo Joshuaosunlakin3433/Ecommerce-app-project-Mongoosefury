@@ -1,5 +1,5 @@
-import ProductHeadings from "../components/ProductHeadings";
-import Tag from "../components/Tag";
+import ProductHeadings from "../Components/ProductHeadings";
+import Tag from "../Components/Tag";
 import DogFood from "../assets/Dog Food.png";
 import Benz from "../assets/Benz.png";
 import Camera from "../assets/CamonCamera.png";
@@ -8,7 +8,7 @@ import GamePad from "../assets/GP11_PRD3 1.png";
 import Sneakers from "../assets/Copa_Sense 1.png";
 import Jacket from "../assets/Jacket.png";
 import CurologySet from "../assets/routine-nav.webp";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../Components/ProductCard";
 
 type Product = {
   name: string;

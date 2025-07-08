@@ -2,9 +2,9 @@ import Cloth from "../assets/Product-cloth.png";
 import Bag from "../assets/Product-bag.png";
 import CPU from "../assets/Product-cpu.png";
 import BookShelf from "../assets/Product-bookshelf.png";
-import ProductCard from "../components/ProductCard";
-import ProductHeadings from "../components/ProductHeadings";
-import Tag from "../components/Tag";
+import ProductCard from "../Components/ProductCard";
+import ProductHeadings from "../Components/ProductHeadings";
+import Tag from "../Components/Tag";
 
 interface ProductCardProps {
   image: string;

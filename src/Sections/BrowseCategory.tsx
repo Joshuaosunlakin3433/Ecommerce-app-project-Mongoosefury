@@ -4,8 +4,8 @@ import SmartWatch from "../assets/Category-SmartWatch.png";
 import Camera from "../assets/camera.png";
 import HeadPhone from "../assets/Category-Headphone.png";
 import Gaming from "../assets/Category-Gamepad.png";
-import Tag from "../components/Tag";
-import ProductHeadings from "../components/ProductHeadings";
+import Tag from "../Components/Tag";
+import ProductHeadings from "../Components/ProductHeadings";
 
 const categories = [
   { name: "Phones", imageSrc: Phones },
