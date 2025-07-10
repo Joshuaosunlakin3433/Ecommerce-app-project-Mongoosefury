@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import axios from "axios";
+// import api from "../services/Api";
 
 const SignUp = () => {
 const [formData, setFormData] = useState({
@@ -15,6 +17,25 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   // Handle form submission logic here
+  const registerUser = async () => {
+    try {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, formData);
+      if (res.status === 200) {
+        alert("Account created successfully");
+      }
+    } catch (err) {
+      let message = "Signup failed";
+      if (axios.isAxiosError(err)) {
+        console.log(err)
+        message = err.response?.data?.message || err.message || message;
+      } else if (err instanceof Error) {
+        message = err.message;
+      }
+      alert(message);
+    }
+  };
+
+  registerUser();
   console.log("Form submitted:", formData);
 };
 

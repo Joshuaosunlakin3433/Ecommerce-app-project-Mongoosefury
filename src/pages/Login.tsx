@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
   // State to manage form data
@@ -13,9 +14,31 @@ const Login = () => {
   // Function to handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would typically handle the login logic, such as calling an API
-    console.log("Form submitted:", formData);
+
+  const login = async () => {
+    try {
+      const response = await axios.post("http://localhost:4100/api/auth/login", formData);
+      // Save token to localStorage
+      localStorage.setItem("token", response.data.token);
+      // Redirect to home page
+      window.location.href = "/";
+      // Handle successful login, e.g., save token, redirect, etc.
+      console.log("Login successful:", response.data);
+    } catch (err) {
+      let message = "Signup failed";
+      if (axios.isAxiosError(err)) {
+        console.log(err)
+        message = err.response?.data?.message || err.message || message;
+      } else if (err instanceof Error) {
+        message = err.message;
+      }
+      alert(message);
+    }
   };
+  login();
+  // Here you would typically handle the login logic, such as calling an API
+  console.log("Form submitted:", formData);
+};
 
   return (
     <div className="flex flex-row h-screen gap-10">
