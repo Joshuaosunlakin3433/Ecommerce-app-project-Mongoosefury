@@ -1,5 +1,5 @@
 import { useCart } from "../context/CartContext";
-import { useCartDrawer } from "../context/cartDrawerContext";
+import { useCartDrawer } from "../context/CartDrawerContext";
 import { FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
