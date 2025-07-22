@@ -16,6 +16,7 @@ import {
   FaRegHeart,
   FaRegEye,
 } from "react-icons/fa";
+import NewArrival from "../Sections/NewArrival";
 
 const Home = () => {
   const { addToCart } = useCart();
@@ -146,7 +147,7 @@ const Home = () => {
       console.error("Invalid cart in localStorage", err);
     }
   }
-}, []);
+},[]);
 
   return (
     <div className="bg-white w-screen ">
@@ -377,6 +378,7 @@ const Home = () => {
       </div>
        <CategorySection/>
       <Products/>
+      <NewArrival/>
     </div>
   );
 };
